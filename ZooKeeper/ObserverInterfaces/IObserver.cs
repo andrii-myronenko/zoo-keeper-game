@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ZooKeeper.ZooManager
+namespace ZooKeeper.ObserverInterfaces
 {
     public interface IObserver
     {
-        void Update(int level);
+        void Update(ActionType actionType, int value);
     }
 }

@@ -2,7 +2,7 @@
 
 namespace ZooKeeper.ZooManager
 {
-    public interface IShopStrategy
+    interface IStoreState
     {
         bool IsStoreAccessible(AnimalsStore store);
     }

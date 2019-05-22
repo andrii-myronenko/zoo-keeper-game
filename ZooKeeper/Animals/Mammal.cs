@@ -1,18 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ZooKeeper.Repositories;
+using ZooKeeper.Models;
 
 namespace ZooKeeper.Animals
 {
     public abstract class Mammal: Animal
     {
-        public override string Eat()
+        public override int FeedingCost { get => 30; }
+
+        protected override string SpecificActionsForFeeding()
         {
-            return "The mammal has eaten meat";
+            ApplicationRepository.AddMammalsFedForUser(master);
+            return "The mammal has eaten meat. It is happy!";
         }
 
-        public Mammal(string name, long userId, Color color) : base(name, userId, color) { }
+        public Mammal(string name, User master, Color color, AnimalType type) : base(name, master, color, type) { }
+
+        public Mammal(DatabaseAnimal animal, User master) : base(animal, master) { }
     }
 }

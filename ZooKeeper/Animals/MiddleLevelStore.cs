@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using ZooKeeper.Models;
 
 namespace ZooKeeper.Animals
 {
@@ -13,16 +10,22 @@ namespace ZooKeeper.Animals
             return 150;
         }
 
-        public override Bird GetBird(string name, long userId)
+        public override Bird GetBird(string name, User user)
         {
             Color color = (Color)new Random().Next(0, colorsNubmer);
-            return new Parrot(name, userId, color);
+            return new Parrot(name, user, color);
         }
 
-        public override Mammal GetMammal(string name, long userId)
+        public override Mammal GetMammal(string name, User user)
         {
             Color color = (Color)new Random().Next(0, colorsNubmer);
-            return new Wolf(name, userId, color);
+            return new Wolf(name, user, color);
+        }
+
+        public override Fish GetFish(string name, User user)
+        {
+            Color color = (Color)new Random().Next(0, colorsNubmer);
+            return new Shark(name, user, color);
         }
     }
 }

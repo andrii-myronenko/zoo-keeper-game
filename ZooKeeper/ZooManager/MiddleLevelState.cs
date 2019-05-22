@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ZooKeeper.Animals;
+﻿using ZooKeeper.Animals;
 
 namespace ZooKeeper.ZooManager
 {
-    class MiddleLevelStrategy : IShopStrategy
+    class MiddleLevelState : IStoreState
     {
         public bool IsStoreAccessible(AnimalsStore store)
         {

@@ -10,13 +10,13 @@ namespace ZooKeeper.AccessManager
         {
 
             var validator = new CredentialsValidator();
-            var validationException = validator.Validate(new Credentials(username, password));
+            var validationException = validator.Validate(new ValidatedObject(username, password));
             if (validationException != null)
             {
                 throw new Exception($"Your {validationException.NotValidField} is not valid, " +
                                     $"Exception: {validationException.Message}");
             }
-            UserRepository.AddUser(username, password);
+            ApplicationRepository.AddUser(username, password);
         }
     }
 }

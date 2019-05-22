@@ -1,42 +1,48 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using ZooKeeper.Models;
 
 namespace ZooKeeper.Animals
 {
-    public enum Color { Red, Green, Blue }
+    public enum Color { Red, Green, Blue, White, Pink, Purple, Violet, Burgundy, Yellow, Grey }
 
-    public enum AnimalType { Wolf, Cat, Parrot, Raven, Dolphin, Penguin }
+    public enum AnimalType { Wolf, Cat, Parrot, Raven, Dolphin, Penguin, Carp, Shark, Whipping }
 
     public abstract class AnimalsStore
     {
-        protected int colorsNubmer = 3;
+        protected int colorsNubmer = 10;
 
-        public abstract Bird GetBird(string name, long userId);
+        public abstract Bird GetBird(string name, User user);
 
-        public abstract Mammal GetMammal(string name, long userId);
+        public abstract Mammal GetMammal(string name, User user);
+
+        public abstract Fish GetFish(string name, User user);
 
         public abstract int GetAnimalCost();
 
-        public static Animal GetAnimal(int type, string name, int color, long userId)
+        public static Animal GetAnimalFromDatabaseRecord(DatabaseAnimal dbAnimal, User user)
         {
-            switch ((AnimalType)type)
+            AnimalType type = (AnimalType)dbAnimal.Type;
+
+            switch (type)
             {
                 case AnimalType.Wolf:
-                    return new Cat(name, userId, (Color)color);
+                    return new Wolf(dbAnimal, user);
                 case AnimalType.Cat:
-                    return new Parrot(name, userId, (Color)color);
+                    return new Cat(dbAnimal, user);
                 case AnimalType.Parrot:
-                    return new Wolf(name, userId, (Color)color);
+                    return new Parrot(dbAnimal, user);
                 case AnimalType.Raven:
-                    return new Raven(name, userId, (Color)color);
+                    return new Raven(dbAnimal, user);
                 case AnimalType.Dolphin:
-                    return new Dolphin(name, userId, (Color)color);
+                    return new Dolphin(dbAnimal, user);
                 case AnimalType.Penguin:
-                    return new Penguin(name, userId, (Color)color);
+                    return new Penguin(dbAnimal, user);
+                case AnimalType.Carp:
+                    return new Carp(dbAnimal, user);
+                case AnimalType.Shark:
+                    return new Shark(dbAnimal, user);
+                case AnimalType.Whipping:
+                    return new Whipping(dbAnimal, user);
                 default:
                     throw new Exception("Unknown animal type");
             }

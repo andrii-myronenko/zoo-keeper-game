@@ -5,6 +5,6 @@ namespace ZooKeeper.AccessManager
 {
     interface IZooLoader
     {
-        ZooPark GetZoo(Credentials credentials);
+        ZooPark GetZoo(string username, string password);
     }
 }

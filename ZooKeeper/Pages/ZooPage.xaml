@@ -24,8 +24,6 @@
                             Margin = "0 5 3 5"/>
                         <TextBlock Text = "{Binding Path = AnimalType, Mode = OneWay}" 
                             Margin = "0 5 3 5"/>
-                        <TextBlock Text = "{Binding Path = Name, Mode = OneWay}" 
-                            Margin = "0 5 3 5"/>
                     </StackPanel>
 
                 </DataTemplate>
@@ -36,10 +34,12 @@
                 <ColumnDefinition Width="110*" ></ColumnDefinition>
                 <ColumnDefinition Width="110*" ></ColumnDefinition>
                 <ColumnDefinition Width="110*" ></ColumnDefinition>
+                <ColumnDefinition Width="110*" ></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Button Content="Middle Store" HorizontalAlignment="Stretch" VerticalAlignment="Top"  Height="40" Grid.Column="1" Click="Middle_Click"/>
-            <Button Content="Premium Store" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Top"  Height="40" Click="Premium_Click" Margin="10,0,0,0"/>
-            <Button Content="Decent store" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="40" Margin="0,0,10,0" Click="Decent_Click" />
+            <Button Content="Middle Store &#10;(150$)" HorizontalAlignment="Stretch" VerticalAlignment="Top"  Height="40" Grid.Column="1" Click="Middle_Click"/>
+            <Button Content="Premium Store&#10;(250$)" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Top"  Height="40" Click="Premium_Click" Margin="10,0,0,0"/>
+            <Button Content="Decent store&#10;(50$)" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="40" Margin="0,0,10,0" Click="Decent_Click" />
+            <Button Content="My Profile" Grid.Column="3" HorizontalAlignment="Stretch" VerticalAlignment="Top"  Height="40" Click="Profile_Click" Margin="10,0,0,0"/>
         </Grid>
         <Frame x:Name="AnimalInfo" Grid.Column="1" Margin="10,80,10,95"/>
         <DockPanel  Grid.Column="1" HorizontalAlignment="Stretch" Height="30" 
@@ -59,9 +59,9 @@
                 <RowDefinition Height="110*" />
             </Grid.RowDefinitions>
             <TextBlock Background="White" Margin="1" x:Name="UsernameBox" Grid.Column="0" HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="Login: " VerticalAlignment="Top" MinWidth="165" Height="32"/>
-            <TextBlock Background="White" Margin="1" x:Name="LevelBox" Grid.Column="1" HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="Level: " VerticalAlignment="Top" MinWidth="165" Height="32"/>
+            <TextBlock Background="White" Margin="1" x:Name="LevelBox" FontSize="11" Grid.Column="1" HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="Level: &#10;New level each 5 animals." VerticalAlignment="Top" MinWidth="165" Height="32"/>
             <TextBlock Background="White" Margin="1" x:Name="MoneyBox" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="Money: " VerticalAlignment="Top" MinWidth="165" Height="32"/>
-            <Button Content="Collect Money (Takes 2 sec)" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="30" Margin="1" Click="Collect_Click" Grid.ColumnSpan="2"/>
+            <Button FontSize="10" Content="Collect Money" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="30" Margin="1" Click="Collect_Click" Grid.ColumnSpan="2"/>
         </Grid>
     </Grid>
 </Page>

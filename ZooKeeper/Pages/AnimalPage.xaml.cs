@@ -1,18 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
+using System;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using ZooKeeper.Animals;
+using ZooKeeper.ZooManager;
 
 namespace ZooKeeper.Pages
 {
@@ -27,16 +17,30 @@ namespace ZooKeeper.Pages
             TypeBlock.Text = animal.AnimalType.ToString();
             ColorBlock.Text = animal.Color.ToString();
             selectedAnimal = animal;
+            FeedingButton.Content = $"Feed({animal.FeedingCost}$)";
         }
 
         private void Feed_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show(selectedAnimal.Eat(), "Greeting");
+            try
+            {
+                var zooPark = ZooPark.GetInstance();
+                MessageBox.Show(zooPark.FeedAnimal(selectedAnimal), "Hoooray!");
+            }
+            catch(Exception exception)
+            {
+                MessageBox.Show(exception.Message, "Error");
+            }
         } 
 
         private void Greeting_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show(selectedAnimal.PerformGreeting(), "Greeting");
+        }
+
+        private void Save_Click(object sender, RoutedEventArgs e)
+        {
+            selectedAnimal.Name = NameBlock.Text;
         }
     }
 }

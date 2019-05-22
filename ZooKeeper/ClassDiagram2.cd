@@ -1,0 +1,367 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ZooKeeper.AccessManager.ProtectedZooLoader" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4.25" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAACAAA=</HashCode>
+      <FileName>AccessManager\ProtectedZooLoader.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="zooLoader" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ZooKeeper.AccessManager.Registrator" Collapsed="true">
+    <Position X="23.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AccessManager\Registrator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ZooKeeper.AccessManager.ZooLoader" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="6.25" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AccessManager\ZooLoader.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ZooKeeper.Animals.Animal" Collapsed="true">
+    <Position X="8.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAEIkgAIAAAgAAABQAAgAAAAAAAAAAgAAAgAA=</HashCode>
+      <FileName>Animals\Animal.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ZooKeeper.Animals.AnimalsStore" Collapsed="true">
+    <Position X="1.25" Y="9" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAACAAAAAAAAAAAAAABAgEAAAAAAAAA=</HashCode>
+      <FileName>Animals\AnimalsStore.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ZooKeeper.Animals.Bird" Collapsed="true">
+    <Position X="13.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>Animals\Bird.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ZooKeeper.Animals.Carp" Collapsed="true">
+    <Position X="8.5" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Animals\Carp.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ZooKeeper.Animals.Cat" Collapsed="true">
+    <Position X="3.25" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Animals\Cat.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ZooKeeper.Animals.DecentStore" Collapsed="true">
+    <Position X="2.75" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAAAAABAgAAAAAAAAAA=</HashCode>
+      <FileName>Animals\DecentStore.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ZooKeeper.Animals.Dolphin" Collapsed="true">
+    <Position X="5" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Animals\Dolphin.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ZooKeeper.Animals.Fish" Collapsed="true">
+    <Position X="8.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>Animals\Fish.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ZooKeeper.Animals.Mammal" Collapsed="true">
+    <Position X="3.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>Animals\Mammal.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ZooKeeper.Animals.MiddleLevelStore" Collapsed="true">
+    <Position X="1" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAAAAABAgAAAAAAAAAA=</HashCode>
+      <FileName>Animals\MiddleLevelStore.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ZooKeeper.Animals.Parrot" Collapsed="true">
+    <Position X="12" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Animals\Parrot.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ZooKeeper.Animals.Penguin" Collapsed="true">
+    <Position X="13.75" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Animals\Penguin.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ZooKeeper.Animals.PremiumStore" Collapsed="true">
+    <Position X="4.5" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAAAAABAgAAAAAAAAAA=</HashCode>
+      <FileName>Animals\PremiumStore.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ZooKeeper.Animals.Raven" Collapsed="true">
+    <Position X="15.5" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Animals\Raven.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ZooKeeper.Animals.Shark" Collapsed="true">
+    <Position X="10.25" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Animals\Shark.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ZooKeeper.Animals.Whipping" Collapsed="true">
+    <Position X="6.75" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Animals\Whipping.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ZooKeeper.Animals.Wolf" Collapsed="true">
+    <Position X="1.5" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Animals\Wolf.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ZooKeeper.App" Collapsed="true">
+    <Position X="23.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ZooKeeper.MainWindow" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="19.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MainWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="ZooKeeper.DatabaseContexts.ApplicationContext" Collapsed="true">
+    <Position X="4.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DatabaseContexts\ApplicationContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ZooKeeper.Exceptions.ValidationException" Collapsed="true">
+    <Position X="7.25" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Exceptions\ValidationException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ZooKeeper.Helpers.Encrypter" Collapsed="true">
+    <Position X="21.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Helpers\Encrypter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ZooKeeper.Models.DatabaseAnimal" Collapsed="true">
+    <Position X="23.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAwAAAAAAAAAAQAAgAAAAAA=</HashCode>
+      <FileName>Models\DatabaseAnimal.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ZooKeeper.Models.User" Collapsed="true">
+    <Position X="19.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAaAAIAAAAAAAAAAQAQAAAAAAAAAAADAACAAAAAAAA=</HashCode>
+      <FileName>Models\User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ZooKeeper.Pages.AnimalPage" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="21.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAAAAAAAAAAAABAAAAAQAAAAAAAAAAAE=</HashCode>
+      <FileName>Pages\AnimalPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="ZooKeeper.Pages.ZooKeeperHome" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="17.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pages\ZooKeeperHome.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ZooKeeper.Pages.ZooPage" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="12.75" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAQAAAABAAAAAAAAEAAgAAACACEAAAAAQAAAAAAQ=</HashCode>
+      <FileName>Pages\ZooPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ZooKeeper.Properties.Resources" Collapsed="true">
+    <Position X="21.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIQ=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ZooKeeper.Properties.Settings" Collapsed="true">
+    <Position X="19.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ZooKeeper.Repositories.ApplicationRepository" Collapsed="true">
+    <Position X="1.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAQAQBQAAAAAAAAAQAAAIAAAgGIAAACAAAEA=</HashCode>
+      <FileName>Repositories\ApplicationRepository.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_context" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ZooKeeper.Validators.AbstractValidator" Collapsed="true">
+    <Position X="9" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAIAAAAAAAAAAAAAAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>Validators\AbstractValidator.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="hadnler" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ZooKeeper.Validators.CredentialsValidator" Collapsed="true">
+    <Position X="11" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Validators\CredentialsValidator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ZooKeeper.Validators.PasswordValidator" Collapsed="true">
+    <Position X="7.25" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Validators\PasswordValidator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ZooKeeper.Validators.UsernameValidator" Collapsed="true">
+    <Position X="9" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Validators\UsernameValidator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ZooKeeper.ZooManager.DecentState" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="14.5" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ZooManager\DecentState.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ZooKeeper.ZooManager.MiddleLevelState" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="14.5" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ZooManager\MiddleLevelState.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ZooKeeper.ZooManager.PremiuimState" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="12.75" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ZooManager\PremiuimState.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ZooKeeper.ZooManager.ZooPark" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="12.75" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAIABIAAAhEAAAAAIAAAAAAFAACAAAEAAAAAAAgAQA=</HashCode>
+      <FileName>ZooManager\ZooPark.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="state" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ZooKeeper.Validators.ValidatedObject" Collapsed="true">
+    <Position X="11" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAQAAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Validators\ValidatedObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="ZooKeeper.AccessManager.IZooLoader" Collapsed="true">
+    <Position X="4.25" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AccessManager\IZooLoader.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ZooKeeper.ObserverInterfaces.IObservable" Collapsed="true">
+    <Position X="14.5" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAhAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAA=</HashCode>
+      <FileName>ObserverInterfaces\IObservable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ZooKeeper.ObserverInterfaces.IObserver" Collapsed="true">
+    <Position X="16.25" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ObserverInterfaces\IObserver.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ZooKeeper.ZooManager.IStoreState" Collapsed="true">
+    <Position X="12.75" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ZooManager\IStoreState.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="ZooKeeper.Animals.Color" Collapsed="true">
+    <Position X="5.25" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAABAAAAAAgAAAAABBAAAFAAAAAAAAAAAADAAAAA=</HashCode>
+      <FileName>Animals\AnimalsStore.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="ZooKeeper.Animals.AnimalType" Collapsed="true">
+    <Position X="3.5" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAEAAQEAAQAAIAAAAAAAAAAAAAAAAAQIAAAQAAAAAA=</HashCode>
+      <FileName>Animals\AnimalsStore.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="ZooKeeper.ObserverInterfaces.ActionType" Collapsed="true">
+    <Position X="14.5" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIIAA=</HashCode>
+      <FileName>ObserverInterfaces\IObservable.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

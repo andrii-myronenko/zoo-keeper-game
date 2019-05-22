@@ -4,12 +4,13 @@ using ZooKeeper.Models;
 using System.Collections.ObjectModel;
 using ZooKeeper.Animals;
 using System.Collections.Generic;
+using ZooKeeper.ObserverInterfaces;
 
 namespace ZooKeeper.ZooManager
 {
     public class ZooPark : IObservable
     {
-        private static ZooPark zooInstance; 
+        private static ZooPark zooInstance;
 
         public static ZooPark GetInstance()
         {
@@ -29,56 +30,58 @@ namespace ZooKeeper.ZooManager
             return zooInstance;
         }
 
-        public readonly User user;
-
         public ObservableCollection<Animal> animals;
+
+        public User user;
 
         private List<IObserver> observers;
 
-        private IShopStrategy strategy = new DecentStrategy();
+        private IStoreState state;
 
         private ZooPark(string username)
         {
-            user = UserRepository.GetUser(username);
+            user = ApplicationRepository.GetUser(username);
 
-            animals = DBAnimalRepository.GetAnimals(this.user);
+            animals = ApplicationRepository.GetAnimalsForUser(user);
 
             observers = new List<IObserver>();
+
+            SetProperState(user.Level);
         }
 
-        public void SetState(IShopStrategy state)
+        public Animal BuyRandomAnimal(string name, AnimalsStore store)
         {
-            this.strategy = state;
-        }
-
-        public Animal GetAnimal(string name, AnimalsStore store)
-        {
-            if (!this.strategy.IsStoreAccessible(store))
+            if (!this.state.IsStoreAccessible(store))
             {
                 throw new Exception("This store is not yet aviable for your level. Middle level store is aviable on level 3, " +
                     "Premium level store is aviable on level 10");
             }
-            UserRepository.GetMoneyFromrUser(user, store.GetAnimalCost());
-            int randomNumber = new Random().Next(0, 2);
+            ApplicationRepository.GetMoneyFromrUser(user, store.GetAnimalCost());
+            NotifyObservers(ActionType.MoneyChanged, user.Money);
+            int randomNumber = new Random().Next(0, 3);
             Animal animal;
-            if(randomNumber == 0)
+            if (randomNumber == 0)
             {
-                animal = store.GetBird(name, user.Id);
+                animal = store.GetBird(name, user);
+            }
+            else if (randomNumber == 1)
+            {
+                animal = store.GetMammal(name, user);
             }
             else
             {
-                animal = store.GetMammal(name, user.Id);
+                animal = store.GetFish(name, user);
             }
             animals.Add(animal);
             CheckLevel(animals.Count);
-            DBAnimalRepository.SaveAnimal(animal);
             return animal;
         }
 
         public int AddMoney()
         {
             int amount = user.Level * 10;
-            UserRepository.AddMoneyForUser(user, amount);
+            ApplicationRepository.AddMoneyForUser(user, amount);
+            NotifyObservers(ActionType.MoneyChanged, user.Money);
             return amount;
         }
 
@@ -86,8 +89,32 @@ namespace ZooKeeper.ZooManager
         {
             if (numberOfAnimals / 5 + 1 > user.Level)
             {
-                UserRepository.AddLevelForUser(user);
-                NotifyObservers(user.Level);
+                ApplicationRepository.AddLevelForUser(user);
+                SetProperState(user.Level);
+                NotifyObservers(ActionType.LevelChanged, user.Level);
+            }
+        }
+
+        public string FeedAnimal(Animal animal)
+        {
+            string feedingResult = animal.Eat();
+            NotifyObservers(ActionType.MoneyChanged, user.Money);
+            return feedingResult;
+        }
+
+        private void SetProperState(int level)
+        {
+            if (level >= 10)
+            {
+                state = new PremiuimState();
+            }
+            else if (level >= 3)
+            {
+                state = new MiddleLevelState();
+            }
+            else
+            {
+                state = new DecentState();
             }
         }
 
@@ -101,11 +128,11 @@ namespace ZooKeeper.ZooManager
             observers.Remove(o);
         }
 
-        public void NotifyObservers(int level)
+        public void NotifyObservers(ActionType actionType, int value)
         {
-            foreach (IObserver observer in observers)
+            foreach(var observer in observers)
             {
-                observer.Update(level);
+                observer.Update(actionType, value);
             }
         }
     }

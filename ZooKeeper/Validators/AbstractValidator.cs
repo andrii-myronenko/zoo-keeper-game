@@ -1,5 +1,4 @@
-﻿using System;
-using ZooKeeper.Exceptions;
+﻿using ZooKeeper.Exceptions;
 
 namespace ZooKeeper.Validators
 {
@@ -11,6 +10,6 @@ namespace ZooKeeper.Validators
             this.hadnler = handler;
         }
 
-        public abstract ValidationException Validate(Credentials credentials);
+        public abstract ValidationException Validate(ValidatedObject toValidate);
     }
 }

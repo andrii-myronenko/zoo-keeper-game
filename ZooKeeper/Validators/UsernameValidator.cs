@@ -1,12 +1,11 @@
 ﻿using ZooKeeper.Exceptions;
 using System.Text.RegularExpressions;
-using System;
 
 namespace ZooKeeper.Validators
 {
     class UsernameValidator : AbstractValidator
     {
-        public override ValidationException Validate(Credentials credentials)
+        public override ValidationException Validate(ValidatedObject credentials)
         {
             string username = credentials.Username;
             Regex regex = new Regex(@"[A-Za-z0-9]{3,24}");

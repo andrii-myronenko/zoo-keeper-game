@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace ZooKeeper.Models { 
     public class User
@@ -17,15 +13,24 @@ namespace ZooKeeper.Models {
 
         public int Money { get; set; }
 
-        public virtual ICollection<DBAnimal> Animals { get; set; }
+        public int MammalsFed { get; set; }
 
-    public User(string username, string password)
+        public int FishesFed { get; set; }
+
+        public int BirdsFed { get; set; }
+
+        public virtual ICollection<DatabaseAnimal> Animals { get; set; }
+
+        public User(string username, string password)
         {
             Username = username;
             Password = password;
             Level = 1;
             Money = 100;
-            Animals = new List<DBAnimal>();
+            Animals = new List<DatabaseAnimal>();
+            MammalsFed = 0;
+            FishesFed = 0;
+            BirdsFed = 0;
         }
 
         public User() { }

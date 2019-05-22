@@ -1,26 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ZooKeeper.Models;
 
 namespace ZooKeeper.Animals
 {
-    class Wolf: Mammal
+    class Wolf : Mammal
     {
-        public override string PerformGreeting()
+        protected override string SpecificGreeting()
         {
-            return "Owwwwwwwwwwwwww!";
+            return "Owwwwwwwwwwwwwwwwwwww!";
         }
 
-        public override AnimalType AnimalType
-        {
-            get
-            {
-                return AnimalType.Wolf;
-            }
-        }
+        public Wolf(string name, User master, Color color) : base(name, master, color, AnimalType.Wolf) { }
 
-        public Wolf(string name, long userId, Color color) : base(name, userId, color) { }
+        public Wolf(DatabaseAnimal animal, User master) : base(animal, master) { }
     }
 }

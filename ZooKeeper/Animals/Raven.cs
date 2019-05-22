@@ -1,26 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ZooKeeper.Models;
 
 namespace ZooKeeper.Animals
 {
     class Raven: Bird
     {
-        public override string PerformGreeting()
+        protected override string SpecificGreeting()
         {
             return "Karrrrrr!";
         }
 
-        public override AnimalType AnimalType
-        {
-            get
-            {
-                return AnimalType.Raven;
-            }
-        }
+        public Raven(string name, User master, Color color) : base(name, master, color, AnimalType.Raven) { }
 
-        public Raven(string name, long userId, Color color) : base(name, userId, color) { }
+        public Raven(DatabaseAnimal animal, User master) : base(animal, master) { }
     }
 }

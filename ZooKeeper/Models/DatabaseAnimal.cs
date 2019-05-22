@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ZooKeeper.Models
+﻿namespace ZooKeeper.Models
 {
-    public class DBAnimal
+    public class DatabaseAnimal
     {
         public long Id { get; set; }
 
@@ -18,7 +12,7 @@ namespace ZooKeeper.Models
 
         public string Name { get; set; }
 
-        public DBAnimal(string name, int type, int color, long userId)
+        public DatabaseAnimal(string name, int type, int color, long userId)
         {
             Type = type;
             Color = color;
@@ -26,6 +20,6 @@ namespace ZooKeeper.Models
             UserId = userId;
         }
 
-        public DBAnimal() { }
+        public DatabaseAnimal() { }
     }
 }

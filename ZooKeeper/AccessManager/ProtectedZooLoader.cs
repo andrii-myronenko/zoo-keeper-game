@@ -9,18 +9,18 @@ namespace ZooKeeper.AccessManager
     {
         ZooLoader zooLoader = new ZooLoader();
 
-        public ZooPark GetZoo(Credentials credentials)
+        public ZooPark GetZoo(string username, string password)
         {
             var validator = new CredentialsValidator();
-            var validationException = validator.Validate(credentials);
+            var validationException = validator.Validate(new ValidatedObject(username, password));
             if (validationException != null)
             {
                 throw new Exception($"Your {validationException.NotValidField} is not valid, " +
                                     $"Exception: {validationException.Message}");
             }
-            if (UserRepository.UserAllowedToAccess(credentials.Username, credentials.Password))
+            if (ApplicationRepository.CheckUserAllowedToAccess(username, password))
             {
-                return zooLoader.GetZoo(credentials);
+                return zooLoader.GetZoo(username, password);
             }
             throw new Exception("There is no user with such login-password match");
         }

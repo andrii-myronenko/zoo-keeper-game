@@ -5,9 +5,9 @@ namespace ZooKeeper.AccessManager
 {
     class ZooLoader : IZooLoader
     {
-        public ZooPark GetZoo(Credentials credentials)
+        public ZooPark GetZoo(string username, string password)
         {
-            return ZooPark.GetInstance(credentials.Username);
+            return ZooPark.GetInstance(username);
         }
     }
 }

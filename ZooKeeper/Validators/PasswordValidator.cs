@@ -5,7 +5,7 @@ namespace ZooKeeper.Validators
 {
     class PasswordValidator : AbstractValidator
     {
-        public override ValidationException Validate(Credentials credentials)
+        public override ValidationException Validate(ValidatedObject credentials)
         {
             string password = credentials.Password;
             Regex regex = new Regex(@"[A-Za-z0-9]{3,24}");

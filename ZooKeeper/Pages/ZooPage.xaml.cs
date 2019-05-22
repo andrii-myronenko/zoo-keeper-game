@@ -1,18 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using ZooKeeper.ZooManager;
 using ZooKeeper.Animals;
+using ZooKeeper.ObserverInterfaces;
 
 namespace ZooKeeper.Pages
 {
@@ -21,32 +12,22 @@ namespace ZooKeeper.Pages
     /// </summary>
     public partial class ZooPage : Page, IObserver
     {
-
         public ZooPage(ZooPark zooPark)
         {
             InitializeComponent();
             zooPark.AddObserver(this);
-            new StrategyController(zooPark);
             AnimalsList.ItemsSource = zooPark.animals;
             UsernameBox.Text += zooPark.user.Username;
-            LevelBox.Text += zooPark.user.Level;
-            MoneyBox.Text += zooPark.user.Money;
+            DisplayLevel(zooPark.user.Level);
+            DisplayMoney(zooPark.user.Money);
         }
-
-        public void Update(int level)
-        {
-            DisplayLevel(level);
-            MessageBox.Show($"You got a new level {level}", "Hurray!");
-        }
-
+        
         private void Premium_Click(object sender, RoutedEventArgs e)
         {
             try
             {
                 string name = this.NameBox.Text;
-                ZooPark park = ZooPark.GetInstance();
-                Animal animal = park.GetAnimal(name, new PremiumStore());
-                DisplayMoney(park.user.Money);
+                Animal animal = ZooPark.GetInstance().BuyRandomAnimal(name, new PremiumStore());
                 this.NameBox.Text = "";
                 ShowCreatedAnimal(animal.AnimalType, animal.Name, animal.Color);
             }
@@ -54,7 +35,6 @@ namespace ZooKeeper.Pages
             {
                 MessageBox.Show(exception.Message, "Exception");
             }
-            
         }
 
         private void Middle_Click(object sender, RoutedEventArgs e)
@@ -62,9 +42,7 @@ namespace ZooKeeper.Pages
             try
             {
                 string name = this.NameBox.Text;
-                ZooPark park = ZooPark.GetInstance();
-                Animal animal = park.GetAnimal(name, new MiddleLevelStore());
-                DisplayMoney(park.user.Money);
+                Animal animal = ZooPark.GetInstance().BuyRandomAnimal(name, new MiddleLevelStore());
                 this.NameBox.Text = "";
                 ShowCreatedAnimal(animal.AnimalType, animal.Name, animal.Color);
             }
@@ -79,9 +57,7 @@ namespace ZooKeeper.Pages
             try
             {
                 string name = this.NameBox.Text;
-                ZooPark park = ZooPark.GetInstance();
-                Animal animal = park.GetAnimal(name, new DecentStore());
-                DisplayMoney(park.user.Money);
+                Animal animal = ZooPark.GetInstance().BuyRandomAnimal(name, new DecentStore());
                 this.NameBox.Text = "";
                 ShowCreatedAnimal(animal.AnimalType, animal.Name, animal.Color);
             }
@@ -112,21 +88,45 @@ namespace ZooKeeper.Pages
 
         private void Collect_Click(object sender, RoutedEventArgs e)
         {
-            System.Threading.Thread.Sleep(2000);
-            ZooPark park = ZooPark.GetInstance();
-            int amount = park.AddMoney();
-            DisplayMoney(park.user.Money);
+            int amount = ZooPark.GetInstance().AddMoney();
             MessageBox.Show($"You got {amount}$. Raise your level to get more. +10$ for each new level", "Hurray!");
         }
 
-        private void DisplayMoney(int amount)
+        private void Profile_Click(object sender, RoutedEventArgs e)
         {
-            MoneyBox.Text = $"Money: {amount}";
+            var zooPark = ZooPark.GetInstance();
+            MessageBox.Show($"Username: {zooPark.user.Username}\n" +
+                $"Level: {zooPark.user.Level}\n" +
+                $"All animals: {zooPark.animals.Count}\n" +
+                $"Mammals fed: {zooPark.user.MammalsFed}\n" +
+                $"Fishes fed: {zooPark.user.FishesFed}\n" +
+                $"Birds fed: {zooPark.user.BirdsFed}", "Profile");
+        }
+
+        public void Update(ActionType actionType, int value)
+        {
+            switch (actionType)
+            {
+                case ActionType.LevelChanged:
+                    DisplayLevel(value);
+                    MessageBox.Show($"You got a new level {value}", "Hurray!");
+                    break;
+                case ActionType.MoneyChanged:
+                    DisplayMoney(value);
+                    break;
+                default:
+                    break;
+            }
+            
+        }
+        private void DisplayMoney(int moneyAmount)
+        {
+            MoneyBox.Text = $"Money: {moneyAmount}";
         }
 
         private void DisplayLevel(int level)
         {
-            LevelBox.Text = $"Level: {level}";
+            LevelBox.Text = $"Level: {level}\nNew level each 5 animals.";
         }
     }
 }
